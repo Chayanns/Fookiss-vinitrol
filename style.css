@@ -1,0 +1,370 @@
+
+/*Lembra de colocar as cores e as fontes que usei*/
+ 
+@charset "UTF-8";
+ 
+@font-face {
+    font-family: titulo1;
+    src: url(fonte/garagegothic-regular.otf) format('opentype');
+   
+}
+@font-face {
+    font-family: titulo2;
+    src: url(fonte/East\ Garage\ Regular.otf) format('opentype');
+    font-weight: normal;
+}
+ 
+ 
+/* Configuração global */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/*CORES*/
+:root{
+    --cor1: #321e25;
+    --cor2: #663845;
+    --cor3: #8b4e5e;
+    --cor4: #c06378;
+    --cor5: #e894a7;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+/*estilização do cabeçalho*/
+header {
+    background-color: var(--cor2);
+    color: white;
+    font-family: 'titulo1', sans-serif; /*fonte*/
+}
+ /*AREAPESQUISA*/
+.areapesquisa {
+    display: flex;
+    align-items: center;
+    height: 120px;
+   /* border-bottom: 1px solid silver; */
+    background-color: var(--cor1);
+  /*  padding: 0; */
+}
+ 
+/*AJUSTE DA LOGO PARA ELA NÃO FICAR NO CANTO*/
+#logo img{
+    margin-left: 50px;
+}
+/* Ajustes no estilo do usuário */
+
+#areauser {
+    padding: 5px;
+    border-bottom: 1px solid silver;
+    display: flex;
+    align-items: center;
+    margin-right: 12px; /* Alinha à direita */
+ 
+}
+/*AJUSTE DA IMG USUARIO*/
+#areauser img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+ 
+#usuario {
+    color: white;
+    font-family: verdana; /* fonte logo*/
+    font-size: 12px;
+    display: flex;
+}
+ 
+#usuario a {
+    text-decoration: none;
+    color: white;
+}
+ 
+#usuario a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+ 
+#usuario a + a {
+    margin-left: 12px; /* Espaço entre os links */
+}
+/*AJUSTE DO FAVORITO E CARRINHO*/
+#favorito {
+    margin-left: 3px;
+}
+ 
+#carrinho {
+    margin-left: 5px;
+}
+ 
+#carrinho img{
+    width: 32px;
+    height: 32px;
+}
+#favorito img{
+    width: 32px;
+    height: 32px;
+}
+/*ARRUMANDO O FORM*/
+form {
+    background-color: var(--cor3);
+    padding: 5px;
+    margin-left: 15%;
+    margin-right: 300px;
+    display: flex;
+    align-items: center;
+}
+ 
+form input[type=text] {
+    width: 550px;
+    border: 0;
+    padding: 10px;
+    outline: none;
+}
+ 
+form button {
+    background-color: var(--cor1);
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+ 
+form button img {
+    width: 20px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 20px;
+    vertical-align: middle; /* Alinha verticalmente ao centro */
+}
+ 
+/*AREA MENU*/
+#menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+  /*  border-bottom: 1px solid silver; */
+   
+}
+#menu nav a {
+    font-family:  'Times New Roman', serif;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    display: inline;
+    margin: 0 0 0 15px;
+}
+#menu nav a:hover{
+    background: var(--cor4);
+}
+#painel img{
+    padding-top: 0px;
+    width: 1896px;
+    height: 700px;
+    border-top: 0px solid #6d081e00;
+}
+ /*PAINEL*/
+#painel h1 {
+   font-family: 'Times New Rowan', serif ;
+   font-size: 48pt;
+   text-align: center;
+   color: var(--cor3);
+   padding-top: 15px;
+}
+ 
+ /* Estilos para as categorias de produtos */
+section#discos {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /*  */
+    flex-wrap: wrap; /**/
+    padding: 20px;
+    background-color: var(--cor3);
+}
+section#discos h2{
+    font-weight: 100;
+    
+}
+.categoria .produto {
+    padding: 20px 0;
+}
+/*AJUSTE DAS IMAGENS QUE CONTÉM NA PÁGIN COMO DISCO, VITROLA E ACESSORIOS*/
+.produto img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+ 
+.produto img:hover {
+    transform: scale(1.2); /* Ajuste o valor para o zoom desejado */
+}
+/*AJUSTE DO QUADRADO CATEGORIA*/
+.categoria {
+    width: calc(33.33% - 40px);
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%; /* Garante que ocupe toda a altura disponível */
+    color: var(--cor3);
+}
+ 
+.categoria h2 {
+    font-size: 1.5em;
+    color: var(--cor5);
+    font-family: 'Times New Roman', serif;
+    margin-top: 10px;
+}
+.categoria h2:hover {
+    text-decoration: underline;
+}
+.produto h3 {
+    font-size: 1.5em;
+    color: #000;
+    margin-top: 10px;
+    font-family: verdana, serif;
+}
+ 
+.categoria p {
+    font-size: 1em;
+    color: var(--cor4);
+    text-decoration: underline;
+    margin: 10px 0;
+}
+
+.produtos .categoria{
+    background: #f1ebeb;
+    margin-top: 100px;
+    border: 1px solid rgb(102, 9, 251)0, 0;
+    padding: 100px;
+    width: calc(25% - 40px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+
+}
+#discos.produtos  h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+   
+}
+.categoria button {
+    background-color: var(--cor1);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+ 
+.categoria button:hover {
+    background-color: var(--cor4);
+}
+.categoria .produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Alinha os produtos no centro */
+}
+/*BOTÃO FAVORITO*/
+.btnfavoritos #contador-carrinho{
+    background-color: #321e25;
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+    display: inline; /*display inline é utilizado quando queremos que os elementos fiquem posicionados lado a lado. */
+    align-items: normal;
+}
+ 
+.btnfavoritos img {
+    margin-right: 1px; /* Espaçamento entre o ícone e o texto */
+    margin-left: auto;
+    height: min-content;
+    margin-bottom: auto;
+    margin-top: 3px;
+    align-items: center;
+}
+ 
+/* carrinho */
+#contador-carrinho {
+    position: auto;
+    top: 8px;
+    right: 12px;
+    background-color: var(--cor4);
+    color: white;
+    font-size: 20px;
+    padding: 6px 6px;
+    border-radius: 50%;
+    display: inline-block;
+}
+ 
+/* Estilo para a mensagem de item adicionado e do botão favorito*/
+.mensagem-adicionado {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--cor5);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 14px;
+    font-family: Verdana;
+}
+/* favorito */
+#contador-favoritos {
+    position: auto;
+    background-color: var(--cor4);
+    color: white;
+    font-size: 20px;
+    padding: 5px 7px;
+    border-radius: 80%;
+}
+/*RODAPE*/
+/* Estilização do rodapé */
+footer {
+    background-color: var(--cor1);
+    color: white;
+    padding: 25px 0; /* Espaçamento interno no topo e na base */
+}
+ /*RODAPÉ*/
+#rodape {
+    display: flex;
+    justify-content: space-between; /* Espaço igual entre os elementos */
+    align-items: center; /* Alinha os itens verticalmente */
+    max-width: 1500px; /* Largura máxima para centralização */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 0 20px; /* Adiciona espaçamento interno */
+}
+
+#contatos {
+    flex: 1; /* Ocupa o máximo de espaço disponível */
+}
+#contatos h2{
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family: 'titulo1', sans-serif;
+}
+#contatos p{
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: Verdana, sans-serif;
+}
+#direitos {
+    text-align: right; /* Alinha o texto à direita */
+}
+ 
+/*ESTILO DAS LETRAS*/
+#direitos p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-family: Verdana, sans-serif;
+}
+
+
+
+
+ 

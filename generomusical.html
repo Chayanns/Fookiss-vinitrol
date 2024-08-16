@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>FooKiss Vinitrol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+    <header>
+        <!--DIV PARA AREA PESQUISA-->
+        <div class="areapesquisa">
+            <div id="logo">
+                <img src="img/logo2.png" alt="logo" >
+            </div>    
+            <form action="ServiceSearch" method="get">
+                <input type="text" placeholder="Pesquise seu disco aqui">
+                <button type="submit"><img src="img/lupa.png" alt="Buscar"></button>
+            </form>
+            <!--DIV PARA OS USUARIOS-->
+            <div id="areauser">
+                <img src="img/usuario.png" alt="usuario">
+                <div id="usuario">
+                    <a href="login.html">Logar </a>  
+                    <a href="cadastro.html">Cadastrar</a>
+                </div>
+            </div>
+            
+            <!---DIV PARA OS FAVORITOS-->
+            <div id="favorito">
+                <img src="img/favoritos.png" alt="favoritos">
+                <span id="contador-favoritos">0</span>
+            </div>
+ 
+            <!--DIV PARA IMG CARRINHO-->
+            <div id="carrinho">
+                <img src="img/carrinho.png" alt="carrinho de compras">
+                <span id="contador-carrinho">0</span>
+            </div>
+        </div>
+ 
+          <!--DIV PARA O MENU-->
+            <div id="menu">
+                <nav>
+                    <a href="generomusical.html">Gênero Musical  </a>
+                    <a href="discos.html"> Discos  </a>
+                    <a href="vitrolas.html"> Vitrolas  </a>
+                    <a href="acessorios.html"> Acessórios</a>
+                </nav>
+            </div>    
+    </header>
+ 
+    <!--Conteúdo da página-->
+    <content>
+        <div id="painel">
+            <img src="img/bannerno.png" alt="banner">
+           
+        </div>
+    </content>
+    <main>
+        <section id="genero_musical">
+            <div class="categoria">
+                <h2>Rock</h2>
+            </div>
+            <div class="categoria">
+                <h2>Pop</h2>
+            </div>
+            <div class="categoria">
+                <h2>Metal</h2>
+            </div>
+            <div class="categoria">
+                <h2>Jaz</h2>
+            </div>
+            <div class="categoria">
+                <h2>K-pop</h2>
+            </div>
+
+            <!-- Adicione mais categorias conforme necessário -->
+        </section>
+    </main>
+    <footer>
+        <div id="rodape">
+            <div id="contatos">
+                <h2>Nossos Contatos</h2>
+                <p>Email: contato@fookissvinitrol.com</p>
+                <p>Telefone: (00) 1234-5678</p>
+                <p>Endereço: Rua dos Vinis, 1234 - São Paulo, SP</p>
+            </div>
+            
+            <div id="direitos">
+                <p>© 2024 FooKiss Vinitrol - Todos os Direitos Reservados</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!--SCRIPT para os botões favorito e carrinho-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var contadorCarrinho = 0;
+            var contadorFavoritos = 0;
+            var spanContadorCarrinho = document.getElementById('contador-carrinho');
+            var spanContadorFavoritos = document.getElementById('contador-favoritos');
+ 
+            var botoesAdicionarCarrinho = document.querySelectorAll('.btncarrinho');
+            var botoesAdicionarFavoritos = document.querySelectorAll('.btnfavoritos');
+ 
+            botoesAdicionarCarrinho.forEach(function(botao) {
+                botao.addEventListener('click', function() {
+                    contadorCarrinho++;
+                    spanContadorCarrinho.textContent = contadorCarrinho;
+ 
+                    var item = this.parentElement.querySelector('h3').innerText;
+                    var mensagem = `O item "${item}" foi adicionado ao carrinho!`;
+                    exibirMensagem(mensagem);
+                });
+            });
+ 
+            botoesAdicionarFavoritos.forEach(function(botao) {
+                botao.addEventListener('click', function() {
+                    contadorFavoritos++;
+                    spanContadorFavoritos.textContent = contadorFavoritos;
+ 
+                    var item = this.parentElement.querySelector('h3').innerText;
+                    var mensagem = `O item "${item}" foi adicionado aos favoritos!`;
+                    exibirMensagem(mensagem);
+                });
+            });
+ 
+            function exibirMensagem(mensagem) {
+                var divMensagem = document.createElement('div');
+                divMensagem.classList.add('mensagem-adicionado');
+                divMensagem.textContent = mensagem;
+                document.body.appendChild(divMensagem);
+ 
+                setTimeout(function() {
+                    divMensagem.remove();
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
+ 
+ 
